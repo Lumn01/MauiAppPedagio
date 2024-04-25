@@ -1,8 +1,27 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             x:Class="MauiAppPedagio.MainPage">
+             x:Class="MauiAppPedagio.MainPage"
+             BackgroundColor="#437DD9">
 
-    
+    <ContentPage.Resources>
+        <Style TargetType="Label">
+            <Setter Property="VerticalTextAlignment" Value="Center"/>
+            <Setter Property="VerticalOptions" Value="FillAndExpand"/>
+        </Style>
+    </ContentPage.Resources>
+
+    <ContentPage.Content>
+        <StackLayout>
+            <Label Text="Origem:" 
+                   x:Name="lbl_origem"
+                   TextColor="White"
+                   FontSize="20"
+                   FontAttributes="Bold"/>
+            
+            
+        </StackLayout>
+    </ContentPage.Content>
+
 
 </ContentPage>
