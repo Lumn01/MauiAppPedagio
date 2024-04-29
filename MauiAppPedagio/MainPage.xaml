@@ -13,13 +13,50 @@
 
     <ContentPage.Content>
         <StackLayout>
-            <Label Text="Origem:" 
-                   x:Name="lbl_origem"
+            <Label Text="Calcule o custo da sua viagem:" 
+                   x:Name="lbl_inicial"
                    TextColor="White"
-                   FontSize="20"
+                   FontSize="26"
                    FontAttributes="Bold"/>
-            
-            
+
+            <Entry Placeholder="Origem:"
+                   x:Name="txt_Origem"
+                   PlaceholderColor="Black"
+                   BackgroundColor="White"
+                   />
+
+            <Entry Placeholder="Destino:"
+                   x:Name="txt_Destino"
+                   PlaceholderColor="Black"
+                   BackgroundColor="White"/>
+
+            <Entry Placeholder="Distância (em Km):"
+                   x:Name="txt_Distancia"
+                   Keyboard="Numeric"
+                   PlaceholderColor="Black"
+                   BackgroundColor="White"/>
+
+            <Entry Placeholder="Rendimento (quantos Km por litro)"
+                   x:Name="txt_Rendimento"
+                   Keyboard="Numeric"
+                   PlaceholderColor="Black"
+                   BackgroundColor="White"/>
+
+            <Entry Placeholder="Qual o preço do combustível?"
+                   x:Name="txt_PrecoCombustivel"
+                   Keyboard="Numeric"
+                   PlaceholderColor="Black"
+                   BackgroundColor="White"/>
+
+            <Button Text="Calcular"
+                    x:Name="btn_Calcular"
+                    Clicked="btn_Calcular_Clicked"/>
+
+            <Button Text="Lista dos Pedágios"
+                    x:Name="btn_ListaPedagios"
+                    Clicked="btn_ListaPedagios_Clicked"/>
+
+
         </StackLayout>
     </ContentPage.Content>
 
