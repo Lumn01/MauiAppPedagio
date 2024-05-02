@@ -71,6 +71,9 @@
 	  <MauiXaml Update="Views\ListaPedagios.xaml">
 	    <Generator>MSBuild:Compile</Generator>
 	  </MauiXaml>
+	  <MauiXaml Update="Views\ListaViagens.xaml">
+	    <Generator>MSBuild:Compile</Generator>
+	  </MauiXaml>
 	  <MauiXaml Update="Views\NovoPedagio.xaml">
 	    <Generator>MSBuild:Compile</Generator>
 	  </MauiXaml>

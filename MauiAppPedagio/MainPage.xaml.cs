@@ -21,8 +21,7 @@ namespace MauiAppPedagio
                     Distancia = Convert.ToDouble(txt_Distancia.Text),
                     Rendimento = Convert.ToDouble(txt_Rendimento.Text),
                     PrecoCombustivel = Convert.ToDouble(txt_PrecoCombustivel.Text),
-                    
-                };
+            };
 
                 await App.Db2.Insert(c);
                 await DisplayAlert("Sucesso!", "Viagem adicionada", "OK");
@@ -37,6 +36,11 @@ namespace MauiAppPedagio
         private void btn_ListaPedagios_Clicked(object sender, EventArgs e)
         {
             Navigation.PushAsync(new ListaPedagios());
+        }
+
+        private void btn_ListaViagens_Clicked(object sender, EventArgs e)
+        {
+            Navigation.PushAsync(new ListaViagens());
         }
     }
 

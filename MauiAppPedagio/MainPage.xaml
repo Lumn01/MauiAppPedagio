@@ -13,50 +13,72 @@
 
     <ContentPage.Content>
         <StackLayout>
-            <Label Text="Calcule o custo da sua viagem:" 
-                   x:Name="lbl_inicial"
-                   TextColor="White"
-                   FontSize="26"
-                   FontAttributes="Bold"/>
+            <Grid ColumnDefinitions="*, *, *" RowDefinitions="*, *, *, *, *, *, *, *, *">
+                <Label Text="Calcule o custo da sua viagem:" 
+                       x:Name="lbl_inicial"
+                       TextColor="White"
+                       FontSize="26"
+                       FontAttributes="Bold"
+                       Grid.Column="1"
+                       Grid.Row="0"/>
 
-            <Entry Placeholder="Origem:"
-                   x:Name="txt_Origem"
-                   PlaceholderColor="Black"
-                   BackgroundColor="White"
-                   />
+                <Entry Placeholder="Origem:"
+                       x:Name="txt_Origem"
+                       PlaceholderColor="Black"
+                       BackgroundColor="White"
+                       Grid.Column="1"
+                       Grid.Row="1"/>
 
-            <Entry Placeholder="Destino:"
-                   x:Name="txt_Destino"
-                   PlaceholderColor="Black"
-                   BackgroundColor="White"/>
+                <Entry Placeholder="Destino:"
+                       x:Name="txt_Destino"
+                       PlaceholderColor="Black"
+                       BackgroundColor="White"
+                       Grid.Column="1"
+                       Grid.Row="2"/>
 
-            <Entry Placeholder="Distância (em Km):"
-                   x:Name="txt_Distancia"
-                   Keyboard="Numeric"
-                   PlaceholderColor="Black"
-                   BackgroundColor="White"/>
+                <Entry Placeholder="Distância (em Km):"
+                       x:Name="txt_Distancia"
+                       Keyboard="Numeric"
+                       PlaceholderColor="Black"
+                       BackgroundColor="White"
+                       Grid.Column="1"
+                       Grid.Row="3"/>
 
-            <Entry Placeholder="Rendimento (quantos Km por litro)"
-                   x:Name="txt_Rendimento"
-                   Keyboard="Numeric"
-                   PlaceholderColor="Black"
-                   BackgroundColor="White"/>
+                <Entry Placeholder="Rendimento (quantos Km por litro)"
+                       x:Name="txt_Rendimento"
+                       Keyboard="Numeric"
+                       PlaceholderColor="Black"
+                       BackgroundColor="White"
+                       Grid.Column="1"
+                       Grid.Row="4"/>
 
-            <Entry Placeholder="Qual o preço do combustível?"
-                   x:Name="txt_PrecoCombustivel"
-                   Keyboard="Numeric"
-                   PlaceholderColor="Black"
-                   BackgroundColor="White"/>
+                <Entry Placeholder="Qual o preço do combustível?"
+                       x:Name="txt_PrecoCombustivel"
+                       Keyboard="Numeric"
+                       PlaceholderColor="Black"
+                       BackgroundColor="White"
+                       Grid.Column="1"
+                       Grid.Row="5"/>
 
-            <Button Text="Calcular"
-                    x:Name="btn_Calcular"
-                    Clicked="btn_Calcular_Clicked"/>
+                <Button Text="Calcular"
+                        x:Name="btn_Calcular"
+                        Clicked="btn_Calcular_Clicked"
+                        Grid.Column="1"
+                        Grid.Row="6"/>
 
-            <Button Text="Lista dos Pedágios"
-                    x:Name="btn_ListaPedagios"
-                    Clicked="btn_ListaPedagios_Clicked"/>
+                <Button Text="Lista dos Pedágios"
+                        x:Name="btn_ListaPedagios"
+                        Clicked="btn_ListaPedagios_Clicked"
+                        Grid.Column="1"
+                        Grid.Row="7"/>
 
+                <Button Text="Lista das Viagens"
+                        x:Name="btn_ListaViagens"
+                        Clicked="btn_ListaViagens_Clicked"
+                        Grid.Column="1"
+                        Grid.Row="8"/>
 
+            </Grid>
         </StackLayout>
     </ContentPage.Content>
 

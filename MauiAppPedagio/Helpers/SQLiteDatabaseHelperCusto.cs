@@ -43,5 +43,12 @@ namespace MauiAppPedagio.Helpers
         {
             return _connn.Table<CustoViagem>().DeleteAsync(i => i.Id == id);
         }
+
+        public Task<List<CustoViagem>> Search(string s)
+        {
+            string sql = "SELECT * FROM CustoViagem WHERE Origem LIKE '%" + s + "%'";
+
+            return _connn.QueryAsync<CustoViagem>(sql);
+        }
     }
 }
