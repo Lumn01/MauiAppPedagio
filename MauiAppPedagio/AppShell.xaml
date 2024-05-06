@@ -8,7 +8,6 @@
     Title="MauiAppPedagio">
 
     <ShellContent
-        Title="Custo de Viagens"
         ContentTemplate="{DataTemplate local:MainPage}"
         Route="MainPage" />
 

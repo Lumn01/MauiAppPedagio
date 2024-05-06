@@ -2,19 +2,20 @@
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="MauiAppPedagio.Views.NovoPedagio"
-             Title="NovoPedagio">
+             Title="NovoPedagio"
+             BackgroundColor="#437DD9">
 
     <ContentPage.ToolbarItems>
         <ToolbarItem Text="Salvar" Clicked="ToolbarItem_Clicked"/>
     </ContentPage.ToolbarItems>
 
     <ContentPage.Content>
-        <VerticalStackLayout>
-            <Label Text="Local: "/>
-            <Entry x:Name="txt_local"/>
+        <VerticalStackLayout Margin="20">
+            <Label Text="Local: " TextColor="#3BDBB3" FontAttributes="Bold" FontSize="20"/>
+            <Entry x:Name="txt_local" Text="{Binding Local}" BackgroundColor="White"/>
 
-            <Label Text="Valor: "/>
-            <Entry x:Name="txt_valor"/>
+            <Label Text="Valor: " TextColor="#3BDBB3" FontAttributes="Bold" FontSize="20"/>
+            <Entry x:Name="txt_valor" Text="{Binding Local}" BackgroundColor="White"/>
         </VerticalStackLayout>
     </ContentPage.Content>
 </ContentPage>

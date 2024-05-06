@@ -3,7 +3,8 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:Views="clr-namespace:MauiAppPedagio"
              x:Class="MauiAppPedagio.Views.ListaViagens"
-             Title="ListaViagens">
+             Title="ListaViagens"
+             BackgroundColor="#437DD9">
     
     <ContentPage.Resources>
         <Style TargetType="Label">
@@ -17,46 +18,51 @@
     </ContentPage.ToolbarItems>
 
     <ContentPage.Content>
-        <VerticalStackLayout>
+        <VerticalStackLayout Margin="20">
             <SearchBar x:Name="txt_search" Margin="-10, 0, 0, 0"
-                   Placeholder="Busca das Viagens"
-                   TextChanged="txt_search_TextChanged"/>
+                       Placeholder="Busca das Viagens (Digite a Origem)"
+                       BackgroundColor="White"
+                       TextChanged="txt_search_TextChanged"/>
 
             <RefreshView x:Name="ref_carregando"
-                     IsRefreshing="False"
-                     Refreshing="ref_carregando_Refreshing"/>
+                         IsRefreshing="False"
+                         Refreshing="ref_carregando_Refreshing"/>
 
-            <ListView x:Name="lst_viagens">
-                <ListView.Header>
-                    <Grid ColumnDefinitions="*, *, *, *, *, *">
-                        <Label Grid.Column="0" Text="Origem"/>
-                        <Label Grid.Column="1" Text="Destino"/>
-                        <Label Grid.Column="2" Text="Distância"/>
-                        <Label Grid.Column="3" Text="Rendimento"/>
-                        <Label Grid.Column="4" Text="Preço Combustível"/>
-                        <Label Grid.Column="5" Text="Custo"/>
-
-                    </Grid>
-                </ListView.Header>
-
-                <ListView.ItemTemplate>
-                    <DataTemplate>
-                        <ViewCell>
-                            <ViewCell.ContextActions>
-                                <MenuItem Text="Remover" Clicked="MenuItem_Clicked_Remover"/>
-                            </ViewCell.ContextActions>
+            <Border StrokeShape="RoundRectangle 20">
+                <VerticalStackLayout Margin="10">
+                    <ListView x:Name="lst_viagens">
+                        <ListView.Header>
                             <Grid ColumnDefinitions="*, *, *, *, *, *">
-                                <Label Grid.Row="0" Grid.Column="0" Text="{Binding Origem}"/>
-                                <Label Grid.Row="0" Grid.Column="1" Text="{Binding Destino}"/>
-                                <Label Grid.Row="0" Grid.Column="2" Text="{Binding Distancia}"/>
-                                <Label Grid.Row="0" Grid.Column="3" Text="{Binding Rendimento}"/>
-                                <Label Grid.Row="0" Grid.Column="4" Text="{Binding PrecoCombustivel}"/>
-                                <Label Grid.Row="0" Grid.Column="5" Text="{Binding Custo}"/>
+                                <Label Grid.Column="0" Text="Origem" TextColor="#3BDBB3" FontAttributes="Bold" FontSize="15"/>
+                                <Label Grid.Column="1" Text="Destino" TextColor="#3BDBB3" FontAttributes="Bold" FontSize="15"/>
+                                <Label Grid.Column="2" Text="Distância" TextColor="#3BDBB3" FontAttributes="Bold" FontSize="15"/>
+                                <Label Grid.Column="3" Text="Rendimento" TextColor="#3BDBB3" FontAttributes="Bold" FontSize="15"/>
+                                <Label Grid.Column="4" Text="Preço Combustível" TextColor="#3BDBB3" FontAttributes="Bold" FontSize="15"/>
+                                <Label Grid.Column="5" Text="Custo" TextColor="#3BDBB3" FontAttributes="Bold" FontSize="15"/>
+
                             </Grid>
-                        </ViewCell>
-                    </DataTemplate>
-                </ListView.ItemTemplate>
-            </ListView>
+                        </ListView.Header>
+
+                        <ListView.ItemTemplate>
+                            <DataTemplate>
+                                <ViewCell>
+                                    <ViewCell.ContextActions>
+                                        <MenuItem Text="Remover" Clicked="MenuItem_Clicked_Remover"/>
+                                    </ViewCell.ContextActions>
+                                    <Grid ColumnDefinitions="*, *, *, *, *, *">
+                                        <Label Grid.Row="0" Grid.Column="0" Text="{Binding Origem}" TextColor="White"/>
+                                        <Label Grid.Row="0" Grid.Column="1" Text="{Binding Destino}" TextColor="White"/>
+                                        <Label Grid.Row="0" Grid.Column="2" Text="{Binding Distancia}" TextColor="White"/>
+                                        <Label Grid.Row="0" Grid.Column="3" Text="{Binding Rendimento}" TextColor="White"/>
+                                        <Label Grid.Row="0" Grid.Column="4" Text="{Binding PrecoCombustivel}" TextColor="White"/>
+                                        <Label Grid.Row="0" Grid.Column="5" Text="{Binding Custo}" TextColor="White"/>
+                                    </Grid>
+                                </ViewCell>
+                            </DataTemplate>
+                        </ListView.ItemTemplate>
+                    </ListView>
+                </VerticalStackLayout>
+            </Border>
         </VerticalStackLayout>
     </ContentPage.Content>
 </ContentPage>

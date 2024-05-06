@@ -12,16 +12,18 @@
     </ContentPage.Resources>
 
     <ContentPage.Content>
-        <StackLayout>
-            <Grid ColumnDefinitions="*, *, *" RowDefinitions="*, *, *, *, *, *, *, *, *">
+        <StackLayout Margin="40">
+            <Grid ColumnDefinitions="*"
+                  RowDefinitions="*, *, *, *, *, *, *, *, *"
+                  RowSpacing="10">
                 <Label Text="Calcule o custo da sua viagem:" 
                        x:Name="lbl_inicial"
                        TextColor="White"
                        FontSize="26"
                        FontAttributes="Bold"
-                       Grid.Column="1"
+                       Grid.Column="0"
                        Grid.Row="0"/>
-
+    
                 <Entry Placeholder="Origem:"
                        x:Name="txt_Origem"
                        PlaceholderColor="Black"
@@ -59,24 +61,30 @@
                        BackgroundColor="White"
                        Grid.Column="1"
                        Grid.Row="5"/>
-
+        
                 <Button Text="Calcular"
                         x:Name="btn_Calcular"
+                        FontAttributes="Bold"
                         Clicked="btn_Calcular_Clicked"
                         Grid.Column="1"
-                        Grid.Row="6"/>
+                        Grid.Row="6"
+                        BackgroundColor="#3BDBB3"/>
 
                 <Button Text="Lista dos Pedágios"
                         x:Name="btn_ListaPedagios"
+                        FontAttributes="Bold"
                         Clicked="btn_ListaPedagios_Clicked"
                         Grid.Column="1"
-                        Grid.Row="7"/>
+                        Grid.Row="7"
+                        BackgroundColor="#403BDB"/>
 
                 <Button Text="Lista das Viagens"
                         x:Name="btn_ListaViagens"
+                        FontAttributes="Bold"
                         Clicked="btn_ListaViagens_Clicked"
                         Grid.Column="1"
-                        Grid.Row="8"/>
+                        Grid.Row="8"
+                        BackgroundColor="#403BDB"/>
 
             </Grid>
         </StackLayout>

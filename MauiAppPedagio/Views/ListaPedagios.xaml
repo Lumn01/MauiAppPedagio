@@ -3,7 +3,8 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:Views="clr-namespace:MauiAppPedagio"
              x:Class="MauiAppPedagio.Views.ListaPedagios"
-             Title="ListaPedagios">
+             Title="ListaPedagios"
+             BackgroundColor="#437DD9">
     
     <ContentPage.Resources>
         <Style TargetType="Label">
@@ -18,38 +19,42 @@
     </ContentPage.ToolbarItems>
 
     <ContentPage.Content>
-        <VerticalStackLayout>
+        <VerticalStackLayout Margin="20">
             <SearchBar x:Name="txt_search" Margin="-10, 0, 0, 0"
                        Placeholder="Busca de Pedagios"
-                       TextChanged="txt_search_TextChanged"/>
+                       TextChanged="txt_search_TextChanged"
+                       BackgroundColor="White"/>
 
             <RefreshView x:Name="ref_carregando"
                          IsRefreshing="False"
                          Refreshing="ref_carregando_Refreshing"/>
-
-            <ListView x:Name="lst_pedagios"
+            <Border StrokeShape="RoundRectangle 20">
+                <VerticalStackLayout Margin="10">
+                    <ListView x:Name="lst_pedagios"
                       ItemSelected="lst_pedagios_ItemSelected">
-                <ListView.Header>
-                    <Grid ColumnDefinitions="*, *">
-                        <Label Grid.Column="0" Text="Local"/>
-                        <Label Grid.Column="1" Text="Preço"/>
-                    </Grid>
-                </ListView.Header>
-
-                <ListView.ItemTemplate>
-                    <DataTemplate>
-                        <ViewCell>
-                            <ViewCell.ContextActions>
-                                <MenuItem Text="Remover" Clicked="MenuItem_Clicked_Remover"/>
-                            </ViewCell.ContextActions>
+                        <ListView.Header>
                             <Grid ColumnDefinitions="*, *">
-                                <Label Grid.Row="0" Grid.Column="0" Text="{Binding Local}"/>
-                                <Label Grid.Row="0" Grid.Column="1" Text="{Binding Valor}"/>
+                                <Label Grid.Column="0" Text="Local" TextColor="#3BDBB3" FontAttributes="Bold" FontSize="15"/>
+                                <Label Grid.Column="1" Text="Preço" TextColor="#3BDBB3" FontAttributes="Bold" FontSize="15"/>
                             </Grid>
-                        </ViewCell>
-                    </DataTemplate>
-                </ListView.ItemTemplate>
-            </ListView>
+                        </ListView.Header>
+
+                        <ListView.ItemTemplate>
+                            <DataTemplate>
+                                <ViewCell>
+                                    <ViewCell.ContextActions>
+                                        <MenuItem Text="Remover" Clicked="MenuItem_Clicked_Remover"/>
+                                    </ViewCell.ContextActions>
+                                    <Grid ColumnDefinitions="*, *">
+                                        <Label Grid.Row="0" Grid.Column="0" Text="{Binding Local}" TextColor="White"/>
+                                        <Label Grid.Row="0" Grid.Column="1" Text="{Binding Valor}" TextColor="White"/>
+                                    </Grid>
+                                </ViewCell>
+                            </DataTemplate>
+                        </ListView.ItemTemplate>
+                    </ListView>
+                </VerticalStackLayout>
+            </Border>
         </VerticalStackLayout>
     </ContentPage.Content>
 </ContentPage>
